@@ -1,0 +1,23 @@
+{
+  "name": "analysis-location",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanghuifeng1997/analysis-location.git"
+  },
+  "keywords": [
+    "locaton",
+    "url"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanghuifeng1997/analysis-location/issues"
+  },
+  "homepage": "https://github.com/wanghuifeng1997/analysis-location#readme"
+}

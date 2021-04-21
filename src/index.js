@@ -20,7 +20,7 @@ export default class analysisLocation {
   _init(url) {
     const urlList = url.split("//");
     const hostList = urlList.slice(1).join("//").split("/");
-    const hashList = hostList.slice(1).join("//").split("#");
+    const hashList = hostList.slice(1).join("/").split("#");
     const searchList = hashList[0].split("?");
     const portList = hostList[0].split(":");
 
@@ -41,6 +41,19 @@ export default class analysisLocation {
 
 		 return arr.join(sbol)
 	 } */
+
+   /* 删除最后的/线 */
+   _omit(url){
+    if(url.substr(-1)=='/'){
+      let urlList= [...url]
+      urlList.pop()
+      return urlList.join();
+    }else{
+      return url
+    }
+
+   }
+
   /* 处理href */
   _href() {
     let { hash, protocol, pathname, search } = this.location;
