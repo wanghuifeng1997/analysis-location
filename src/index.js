@@ -24,7 +24,7 @@ export default class analysisLocation {
     const searchList = hashList[0].split("?");
     const portList = hostList[0].split(":");
 
-    this.location.pathname = "/" + searchList[0];
+    this.location.pathname = "/" + this._omit(searchList[0]);
     this.location.hostname = portList[0] ? portList[0] + "" : "";
     this.location.port = portList[1] ? parseInt(portList[1]) + "" : "";
     this.location.protocol = urlList[0] ? urlList[0] : "";
@@ -42,17 +42,16 @@ export default class analysisLocation {
 		 return arr.join(sbol)
 	 } */
 
-   /* 删除最后的/线 */
-   _omit(url){
-    if(url.substr(-1)=='/'){
-      let urlList= [...url]
-      urlList.pop()
+  /* 删除最后的/线 */
+  _omit(url) {
+    if (url.substr(-1) == "/") {
+      let urlList = [...url];
+      urlList.pop();
       return urlList.join();
-    }else{
-      return url
+    } else {
+      return url;
     }
-
-   }
+  }
 
   /* 处理href */
   _href() {
@@ -80,13 +79,13 @@ export default class analysisLocation {
   /* 解析origin */
   _abalysisOrigin(url) {
     // protocol + "//" + this._host();
-	const urlList = url.split("//");
+    const urlList = url.split("//");
     const hostList = urlList.slice(1).join("//").split("/");
-	const portList = hostList[0].split(":");
+    const portList = hostList[0].split(":");
 
-	this.location.hostname = portList[0] ? portList[0] + "" : "";
+    this.location.hostname = portList[0] ? portList[0] + "" : "";
     this.location.port = portList[1] ? parseInt(portList[1]) + "" : "";
-	this.location.protocol = urlList[0] ? urlList[0] : "";
+    this.location.protocol = urlList[0] ? urlList[0] : "";
 
     return this.location.protocol + "//" + this._host();
   }
@@ -160,5 +159,4 @@ export default class analysisLocation {
     let origin = this._abalysisOrigin(val);
     return (this.location.origin = origin);
   }
-
 }
