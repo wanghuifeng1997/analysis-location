@@ -163,4 +163,3 @@ class analysisLocation {
 
 
 export default analysisLocation
-module.exports = { analysisLocation }

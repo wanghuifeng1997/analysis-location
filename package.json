@@ -1,7 +1,7 @@
 {
   "name": "analysis-location",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Support for CommonJS imports",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
     "url"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "Mulan",
   "bugs": {
     "url": "https://github.com/wanghuifeng1997/analysis-location/issues"
   },
