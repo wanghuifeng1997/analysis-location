@@ -1,6 +1,6 @@
 {
   "name": "analysis-location",
-  "version": "0.0.4-rc.2",
+  "version": "0.0.4-rc.3",
   "description": "A Url library parses Url information And he's lightweight .Converted to ES5, it's only 6.78KB",
   "main": "index.js",
   "scripts": {

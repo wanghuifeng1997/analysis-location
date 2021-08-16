@@ -17,7 +17,7 @@ export default {
         // 压缩代码
         uglify(),
         // 热更新 默认监听根文件夹
-        livereload(),
+        // livereload(),
         // 本地服务器
         /* serve({
           open: true, // 自动打开页面
