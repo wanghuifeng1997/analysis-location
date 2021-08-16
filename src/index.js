@@ -1,6 +1,6 @@
 /**
  * 创建一个Url 类库解析Url 信息  */
-export default class analysisLocation {
+class analysisLocation {
   location = {
     hash: "",
     host: "", // 有端口号
@@ -160,3 +160,7 @@ export default class analysisLocation {
     return (this.location.origin = origin);
   }
 }
+
+
+export default analysisLocation
+module.exports = { analysisLocation }
