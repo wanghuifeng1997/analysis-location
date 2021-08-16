@@ -1,5 +1,3 @@
-import analysisLocation from "./src/index.js";
-
 declare class AnalysisLocation {
     
     location: {

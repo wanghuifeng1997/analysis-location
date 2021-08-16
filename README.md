@@ -1,7 +1,7 @@
 # Analysis Location
 
 ## A Url library parses Url information And he's lightweight .
-## Converted to ES5, it's only 6.78KB
+## Converted to ES5, it's only 4.78KB
 
 ## use Url
 
