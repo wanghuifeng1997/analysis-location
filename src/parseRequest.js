@@ -43,6 +43,12 @@ export default class parseRequest {
     });
     return (this.parse = parameter);
   }
+  /* 合并 */
+  _assign() {
+    let parse = this.parse;
+    let appendParse = this.appendParse;
+    return Object.assign(parse, appendParse);
+  }
 
   /* 返回 Boolean 判断是否存在此搜索参数 */
   _has(name) {
@@ -112,6 +118,17 @@ export default class parseRequest {
     return URL.substr(0, URL.length - 1);
   }
 
+  /*  */
+  toParse() {
+    let parameterArr = this.toString().split("&");
+    let parameter = {};
+    parameterArr.forEach((item) => {
+      let itemVal = item.split("=");
+      parameter[itemVal[0]] = itemVal[1];
+    });
+    return parameter;
+  }
+
   /* 从搜索参数列表里删除指定的搜索参数及其对应的值。 */
   delete(name) {
     delete this.parse[name];
@@ -119,20 +136,16 @@ export default class parseRequest {
     return;
   }
 
-  _assign() {
-    let parse = this.parse;
-    let appendParse = this.appendParse;
-    return Object.assign(parse, appendParse);
-  }
-
   /* URLSearchParams.keys()返回一个iterator，遍历器允许遍历对象中包含的所有键。这些键都是USVString对象。 */
   keys() {
-    return this._assign();
+    return Object.keys(this._assign());
   }
 
   /* URLSearchParams.values()方法返回一个iterator，该遍历器允许遍历对象中包含的所有值。这些值都是USVString对象。 */
   values() {
-    return this._assign();
+    let Arr1 = Object.values(this.parse);
+    let Arr2 = Object.values(this.appendParse);
+    return [...Arr1, ...Arr2].flat();
   }
 
   /* 方法返回一个iterator，允许遍历该对象中包含的所有键/值对。每一组键值对都是 USVString对象 */

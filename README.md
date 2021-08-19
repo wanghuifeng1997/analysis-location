@@ -7,6 +7,7 @@
 ## use Url
 
 ```JavaScript
+const analysisLocation = require('analysis-location');
 let urltset = "https://www.google.com:5500/search?q=vscode+%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E6%8F%92%E4%BB%B6&rlz=1C1SIAJ_zh-CN__929__929&ei=sI1_YKilBYb8rQHa6aDYBQ&oq=vscode+%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E6%8F%92%E4%BB%B6&gs_lcp=Cgdnd3Mtd2l6EAM6BQgAELADOgcIABCwAxAeULggWMotYK4vaAFwAHgAgAHIAYgBow2SAQUwLjguMZgBAKABAaoBB2d3cy13aXrIAQLAAQE&sclient=gws-wiz&ved=0ahUKEwiovfD9pI7wAhUGfisKHdo0CFsQ4dUDCA4&uact=5/#/2321312312312/dsfasdf/?dasdfas=sfsadf&asfdsad=erwerw/#/123"
 
 let url = new analysisLocation(urltset);
@@ -60,7 +61,7 @@ console.log(url)
 
 ## plan (version => 0.0.5.rc)
 
-- [-] Parse the information after the question mark.
+- [+] Parse the information after the question mark.
   - [+] has
   - [+] get
   - [+] set
@@ -68,7 +69,32 @@ console.log(url)
   - [+] append
   - [+] toString
   - [+] delete
-  - [-] keys
-  - [-] values
+  - [+] keys ?
+  - [+] values ?
   - [-] entries
   - [-] sort
+
+## use parseRequest
+
+```JavaScript
+    const {parseRequest} = require('analysis-location');
+    /* ——————————————————————————————————————————————————————————————————————*/
+    /* |-            Refer to the W3C URLSearchParams standard .          -| */
+    /* |- https://developer.mozilla.org/docs/Web/API/URLSearchParams/keys -| */
+    /* ————————————————————————————————————————————————————————————————————— */
+
+    const analysisLocation = require("analysis-location");
+    let url =
+    "https://www.google.com:5500/search?q=vscode+%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E6%8F%92%E4%BB%B6&rlz=1C1SIAJ_zh-CN__929__929&ei=sI1_YKilBYb8rQHa6aDYBQ&oq=vscode+%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E6%8F%92%E4%BB%B6&gs_lcp=Cgdnd3Mtd2l6EAM6BQgAELADOgcIABCwAxAeULggWMotYK4vaAFwAHgAgAHIAYgBow2SAQUwLjguMZgBAKABAaoBB2d3cy13aXrIAQLAAQE&sclient=gws-wiz&ved=0ahUKEwiovfD9pI7wAhUGfisKHdo0CFsQ4dUDCA4&uact=5";
+    url += "/#/erqwerqw?1=2&s=2&r=44&r=2323&r=444";
+    var a = new analysisLocation(url);
+    var b = new parseRequest(a.hash);
+    console.log(a);
+    console.log(b.get("a"));
+    console.log(b.getAll());
+
+    for (var value of b.values()) {
+    console.log(value);
+}
+
+```
