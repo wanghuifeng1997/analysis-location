@@ -1,0 +1,7 @@
+node_modules/*
+babel.config.js
+.*
+index.html
+test.js
+pnpm-lock.yaml
+rollup.confing.js
